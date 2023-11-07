@@ -1,0 +1,24 @@
+<!-- !치고 Enter 누르면 자동으로 기본 <!DOCTYPE html> 코드 쳐짐 -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스프링 부트 테스트</title>
+</head>
+<body>
+    <h1>메인 페이지 입니다.</h1>
+
+    <h1 th:text="${message}">request scope에 담긴 메세지 출력될 것임
+        (어차피 태그 메세지가 읽히기 때문에 주로 설명/주석같은것 적음)</h1>
+
+    <input type="text" th:value="${message}">
+
+    <script th:inline="javascript">
+        const message = /*[[${message}]]*/ "전달 받은 message";
+
+        alert(message);
+    </script>
+</body>
+</html>
