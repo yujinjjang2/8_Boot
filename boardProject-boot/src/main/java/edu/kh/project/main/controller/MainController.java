@@ -11,6 +11,7 @@ public class MainController {
 	public String mainForward(Model model) {
 		
 		model.addAttribute("name", "홍길동");
+		//model.addAttribute("id", "user01");
 		
 		// Spring MVC : /webapp/WEB-INF/views/common/main.jsp
 		
