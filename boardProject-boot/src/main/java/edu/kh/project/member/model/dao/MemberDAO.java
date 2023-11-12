@@ -15,6 +15,7 @@ public class MemberDAO {
 	
 	public Member login(Member inputMember) {
 		// return sqlSession.selectOne("memberMapper.login", inputMember);
+		// Member mem =  memberMapper.login(inputMember);
 		return memberMapper.login(inputMember);
 	}
 

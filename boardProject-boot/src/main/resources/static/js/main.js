@@ -188,6 +188,7 @@ function getCookie(key) {
 
     //saveId=user01@kh.or.kr; test=가나다; aaa=100
     const cookies = document.cookie; // 브라우저에 있는 전체쿠키 가져오기
+    console.log(cookies);
                     // ['saveId=user01@kh.or.kr', 'test=가나다', 'aaa=100']
     const cookieList = cookies.split("; ").map(cookie => cookie.split("=")); // 배열 -> K:V 형태
 
