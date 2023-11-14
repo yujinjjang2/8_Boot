@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="edu.kh.project.member.model.dao.EmailMapper"> <!-- 패키지 + 클래스명 -->
-
-	<!-- DML : resultMap 생략 가능하다 (어차피 int이기 때문) -->
+<mapper namespace="edu.kh.project.member.model.dao.EmailMapper">
 
 	<update id="updateAuthKey">
 		UPDATE "AUTH_KEY" SET
@@ -10,16 +8,15 @@
 		CREATE_TIME = sysdate
 		WHERE EMAIL = #{email}
 	</update>
-
+	
 
 	<insert id="insertAuthKey">
 		INSERT INTO "AUTH_KEY" VALUES(SEQ_AUTH_KEY_NO.NEXTVAL, #{authKey}, #{email}, DEFAULT)
 	</insert>
-	
-	<select id="checkAuthKey" resultType="_int">
-		SELECT COUNT(*) FROM AUTH_KEY
-		WHERE CODE = #{inputKey}
-		AND EMAIL = #{email}
-	</select>
 
+	<select id="checkAuthKey" resultType="_int">
+		SELECT COUNT(*) FROM "AUTH_KEY"
+		WHERE EMAIL = #{email}
+		AND CODE = #{inputKey}
+	</select>
 </mapper>

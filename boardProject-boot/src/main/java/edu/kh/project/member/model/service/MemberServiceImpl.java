@@ -14,14 +14,15 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private MemberDAO dao;
 	
-	@Autowired // bean으로 등록된 객체 중 타입이 일치하는 객체를 DI(의존성 주입)
+	@Autowired // bean으로 등록된 객체 중 타입이 일치하는 객체를 DI
 	private BCryptPasswordEncoder bcrypt;
 	
-	// 암호화가 필요한 곳? 로그인, 회원가입
 	
 	@Override
 	public Member login(Member inputMember) {
 		
+		//System.out.println(bcrypt.encode(inputMember.getMemberPw()));
+
 		// dao 메서드 호출
 		Member loginMember = dao.login(inputMember);
 		
@@ -31,17 +32,18 @@ public class MemberServiceImpl implements MemberService{
 				
 				// 비밀번호를 유지하지 않기 위해서 로그인 정보에서 제거
 				loginMember.setMemberPw(null);
-				
-			} else { // 다를 경우
+			
+			} else { // 다를경우
 				loginMember = null;
 			}
+			
 			
 		} 
 		
 		return loginMember;
 	}
 
-	
+
 	// 회원 가입 서비스
 	@Transactional
 	@Override
@@ -54,4 +56,5 @@ public class MemberServiceImpl implements MemberService{
 		return dao.signUp(inputMember);
 	}
 
+	
 }

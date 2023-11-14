@@ -19,9 +19,8 @@ public class EmailDAO {
 	public int insertAuthKey(Map<String, String> map) {
 		return mapper.insertAuthKey(map);
 	}
-
-	public int checkAuthKey(Map<String, String> map) {
-		return mapper.checkAuthKey(map);
-	}
 	
+	public int checkAuthKey(Map<String, Object> paramMap) {
+		return mapper.checkAuthKey(paramMap);
+	}
 }

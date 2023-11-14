@@ -27,4 +27,5 @@ public interface AjaxService {
 	 * @return count
 	 */
 	int checkNickname(String nickname);
+
 }

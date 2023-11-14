@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
 
-    <link rel="stylesheet" th:href="@{/css/member/signUp-style.css}"> <!-- static 기준으로 경로 작성 -->
+    <link rel="stylesheet" th:href="@{/css/member/signUp-style.css}">
 </head>
 <body>
     <main>
@@ -89,15 +89,6 @@
 
                 <!-- 주소 입력 -->
                 <label for="memberAddress">주소</label>
-                
-                <!-- name 값이 동일할 경우 String[] memberAddress: 배열로 넘어옴 ex) ['04746', '서울 어쩌구', '2층']
-                	만약, 주소가 선택사항이라 사용자가 기입하지 않을 경우 구분자 '' 따옴표만 넘어옴
-                	Controller 단에서 ''(따옴표로 넘어오면) -> null로 db에 입력되도록 처리해줄 것임
-                	ex) 04746^^^서울 어쩌구^^^2층으로 만들어줄 것임 -> 이유: , 구분자와 헷갈릴 수 있기 때문
-                	
-                	ex) 04157,서울시 성동구 어쩌구동,(구분자로서 역할을 제대로 하지 못함) 무슨빌라,2층
-                	->  0416^^^서울 성동구, 어쩌구^^^2층
-                 -->
 
                 <div class="signUp-input-area">
                     <input type="text" name="memberAddress" id="sample6_postcode" placeholder="우편번호" maxlength="6">
@@ -120,7 +111,7 @@
 
     </main>
 
-    <th:block th:replace="~{common/footer}"></th:block>
+   	<th:block th:replace="~{common/footer}"></th:block>
     
     
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -150,7 +141,7 @@
 	        }).open();
 	    }
 	</script>
-	
+    
 
     <script th:src="@{/js/member/signUp.js}"></script>
 </body>

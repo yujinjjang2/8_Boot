@@ -283,7 +283,6 @@ if(imageInput != null){ // 화면에 imageInput이 있을 경우 ( if 굳이 안
         // 이전 프로필 이미지가 있으면서, 새 이미지 업로드를 했다 -> 새 이미지로 변경
         if(initCheck && deleteCheck == 1)   flag = false;
         
-        
         // 이전 프로필 이미지가 있으면서, 프로필 삭제 버튼을 눌렀다 -> 삭제
         if(initCheck && deleteCheck == 0)   flag = false;
 

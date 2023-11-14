@@ -39,19 +39,19 @@ if(loginFrm != null){
 
 
 
-// -----------------------------------------------
+//----------------------------------------
 
 // fetch API : 웹 브라우저에서 서버로 HTTP 요청을 하게해주는 최신 인터페이스
 
-/** 
- * fetch(url)
- * .then(response => response.json() / response.text())          // 파싱
- * .then(data => console.log(data))                              // 데이터 가공
+/**
+ *  fetch(url)
+ * .then(response => response.json() / response.text())
+ * .then(data => console.log(data))
  * .catch(error => console.log(error));
  * 
  * 첫 번째 then() 함수는 서버 요청에 대한 응답이 왔을때 실행됨
  * - 응답받은 데이터가 반환되는 값이 단순 자료형 1개면 text(),
- * 객체(Map)면 json() 으로 파싱(구문해석)한 후 다음 then() 함수로 넘겨준다.
+ * 객체(Map)면 json() 으로 파싱한 후 다음 then() 함수로 넘겨준다.
  * 
  * 
  * 두 번째 then() 함수는 response.json()/text()으로 상황에 맞게
@@ -72,9 +72,9 @@ btn1.addEventListener("click", () => {
     // GET 방식 요청 (파라미터를 쿼리스트링으로 추가)
 
     // Promise : 비동기 함수 호출 또는 연산이 완료되었을 때
-    //         이후에 처리할 함수나 에러를 처리하기 위한
-    //         함수를 설정하는 모듈
-    //         -> 비동기 연산의 최종 결과 객체
+    //          이후에 처리할 함수나 에러를 처리하기 위한 
+    //          함수를 설정하는 모듈
+    //          -> 비동기 연산의 최종 결과 객체
 
     fetch("/selectMemberTel?nickname=" + inputNickname.value)
     .then( resp => resp.text() ) // 응답 객체(자료형 1일때)를 문자열 형식으로 파싱
@@ -97,62 +97,39 @@ const result2 = document.getElementById("result2");
 btn2.addEventListener("click", () => {
 
     // JSON.stringify() : JS 객체 -> JSON
-    // JSON.parse()     : JSON    -> JS 객체
+    // JSON.parse()     : JSON   -> JS 객체
 
     // JSON : Javascript 객체 문법으로, 구조화된 데이터를 표현하기 위한
-    //          문자 기반의 표준 포맷이다.
-    //          서버에서 클라이언트로 데이터를 전송하여 표현하거나,
+    //         문자 기반의 표준 포맷이다.
+    //          서버에서 클라이언트로 데이터를 전송하여 표현거나, 
     //          그 반대의 경우에 사용한다.
-    
-    // GET 방식
-    /* fetch("/selectMember?email=" + inputEmail.value)
-    .then( resp => resp.json() ) // 응답 객체(자료형 1일때)를 문자열 형식으로 파싱
-    .then( data => {
-        // 데이터 가공
-        console.log(data);
-        result2.innerText = JSON.stringify(data);
-    })
-    .catch( err => console.log(err) ); */
-    
+
     // POST 방식 
-    let obj = {};
-    obj.email = inputEmail.value;
-    
-    fetch("/selectMember", { // K:V 형식으로 작성해야 함
+    fetch("/selectMember", {
         method : "POST",
         headers : {"Content-Type" : "application/json"},
-                // 요청 보내는 자원을 명시
+                //  요청 보내는 자원을 명시
                 // -> js 객체를 json 형식으로 만들어 파라미터로 전달
-        //body : JSON.stringify({"email":inputEmail.value,"pw":inputpw.value}) // JS객체 형태 : { K : V }
-        body : JSON.stringify(obj) // JS객체 형태 : { K : V }
-        
-        // 이렇게 보내는 방법도 가능!
-        //let obj = {};
-        //obj.email = inputEmail.value;
-        //obj.pw = inputPw.value;
-        
-        //body : JSON.stringify(obj) // JS객체 형태 : { K : V }
+        body : JSON.stringify({"email" : inputEmail.value})
     })
     .then(resp => resp.json()) // 응답 객체를 자바스크립트 객체 형태로
                                 // 파싱하는것
     .then(member => {
         console.log(member); // javascript 객체
-        result2.innerText = JSON.stringify(member);
     })
-    .catch( err => console.log(err) );
-    
+    .catch(err => console.log(err));
+
 
 });
 
 
-// ----------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------
 
 // 웹소켓 테스트
 // 1. SockJS 라이브러리 추가
 
 // 2. SockJS를 이용해서 클라이언트용 웹소켓 객체 생성
-/*
-let testSock = new SockJS("/testSock");
+/*let testSock = new SockJS("/testSock");
 
 function sendMessage(name, str) {
 
@@ -162,9 +139,9 @@ function sendMessage(name, str) {
     obj.name = name; // 객체에 일치하는 key 가 없다면 자동으로 추가
     obj.str = str;
 
-    // console.log(obj);
+    //console.log(obj);
 
-    testSock.send( JSON.stringify(obj) ); // JS객체 -> JSON
+    testSock.send( JSON.stringify(obj) );  // JS객체 -> JSON
 
 }
 
@@ -172,36 +149,31 @@ function sendMessage(name, str) {
 testSock.onmessage = e => {
 
     // e : 이벤트객체
-    // e.data : 전달 받은 메세지(JSON) 
+    // e.data : 전달 받은 메세지(JSON)
 
     let obj = JSON.parse(e.data); // JSON -> JS객체
 
     console.log(`보낸사람 : ${obj.name} / ${obj.str}`);
-
-}
-*/
-
+}*/
 
 
 // 자바스크립트로 쿠키 얻어오기
 function getCookie(key) {
 
     //saveId=user01@kh.or.kr; test=가나다; aaa=100
-    const cookies = document.cookie; // 브라우저에 있는 전체쿠키 가져오기
-    console.log(cookies);
-                    // ['saveId=user01@kh.or.kr', 'test=가나다', 'aaa=100']
-    const cookieList = cookies.split("; ").map(cookie => cookie.split("=")); // 배열 -> K:V 형태
+    const cookies = document.cookie;
+                //  ['saveId=user01@kh.or.kr', 'test=가나다', 'aaa=100']
+    const cookieList = cookies.split("; ").map(cookie => cookie.split("="));
 
     //배열.map() : 배열의 모든 요소를 순차접근하여 특정 함수 수행 후
     //              수행 결과를 이용해서 새로운 배열을 만드는 함수
-    // ex) [1,2,3].map(num => num*2) -------> [2,4,6]
 
-    // [ ['saveId', 'user01@kh.or.kr'], ['test, 가나다'], ['aaa=100'] ]
+    // [ ['saveId','user01@kh.or.kr'], ['test, 가나다'], ['aaa, 100'] ]
     console.log(cookieList);
 
     const obj = {};
 
-    for(let i = 0; i < cookieList.length; i++) {
+    for(let i=0; i<cookieList.length; i++) {
         obj[cookieList[i][0]] = cookieList[i][1];
     }
 
@@ -210,11 +182,13 @@ function getCookie(key) {
 
 // 쿠키에 saveId가 있을 경우
 if( document.querySelector("input[name='memberEmail']") != null ) {
-    // 화면에 memberEmail 입력박스가 있을 경우
+    //  화면에 memberEmail 입력박스가 있을 경우 
 
     const saveId = getCookie("saveId");
 
     // 있으면 이메일값, 없으면 undefined
+
+    
 
     if(saveId != undefined) { // 쿠키에 저장된 이메일이 있을 때
         document.querySelector("input[name='memberEmail']").value = saveId;
@@ -222,8 +196,3 @@ if( document.querySelector("input[name='memberEmail']") != null ) {
     }
 
 }
-
-
-
-
-

@@ -130,28 +130,29 @@ memberEmail.addEventListener("input", () => {
     if(  regEx.test(memberEmail.value)  ){ // 유효한 경우
 
         /* fetch() API를 이용한 ajax(비동기 통신) : 이메일 중복*/
-        // url : /dupCheck/email
-
-        // GET 방식
-        fetch("/dupCheck/email?email=" + memberEmail.value)
-        .then(res => res.text())
-        .then(count => {
-
-            // count : 중복되면 1, 중복 아니면 0
-            if(count == 0) {
-                emailMessage.innerText = "사용 가능한 이메일입니다.";
-                emailMessage.classList.add("confirm"); // .confirm 스타일 적용
-                emailMessage.classList.remove("error"); // .error 스타일 제거
-                checkObj.memberEmail = true;
-            } else {
-                emailMessage.innerText = "이미 사용중인 이메일입니다.";
-                emailMessage.classList.add("error"); // .error 스타일 적용
-                emailMessage.classList.remove("confirm"); // .confirm 스타일 제거
-                checkObj.memberEmail = false;
-            }
-
-        })
-        .catch(err => console.log(err));
+		//   url:   /dupCheck/email
+		
+		// GET 방식 
+		fetch("/dupCheck/email?email=" + memberEmail.value)
+		.then(res => res.text())
+		.then(count => {
+			
+			//count : 중복되면 1, 중복 아니면 0
+			if(count == 0) {
+			 	emailMessage.innerText = "사용 가능한 이메일입니다.";
+        		emailMessage.classList.add("confirm"); // .confirm 스타일 적용
+        		emailMessage.classList.remove("error"); // .error 스타일 제거
+        		checkObj.memberEmail = true;
+			}else {
+				emailMessage.innerText = "이미 사용중인 이메일입니다.";
+        		emailMessage.classList.add("error"); // .error 스타일 적용
+        		emailMessage.classList.remove("confirm"); // .confirm 스타일 제거
+        		checkObj.memberEmail = false;
+			}	
+			
+		})
+		.catch(err => console.log(err));
+		
 
     } else{ // 유효하지 않은 경우(무효인 경우)
         emailMessage.innerText = "이메일 형식이 유효하지 않습니다";
@@ -278,27 +279,26 @@ memberNickname.addEventListener("input", ()=>{
 
     if(regEx.test(memberNickname.value)){// 유효
 
-        /* fetch() API를 이용한 ajax(비동기 통신) : 닉네임 중복검사 */
-        // url : /dupCheck/nickname
-
-        fetch("/dupCheck/nickname?nickname=" + memberNickname.value)
-        .then(resp => resp.text())
+        fetch("/dupCheck/nickname?nickname="+memberNickname.value)
+        .then(resp => resp.text()) // 응답 객체를 text로 파싱(변환)
         .then(count => {
-            // count : 중복되면 1, 중복 아니면 0
-            if(count == 0) {
-                nickMessage.innerText = "사용 가능한 닉네임입니다.";
-                nickMessage.classList.add("confirm"); // .confirm 스타일 적용
-                nickMessage.classList.remove("error"); // .error 스타일 제거
+
+            if(count == 0){ // 중복 아닌 경우
+                nickMessage.innerText = "사용 가능한 닉네임 입니다";
+                nickMessage.classList.add("confirm");
+                nickMessage.classList.remove("error");
                 checkObj.memberNickname = true;
-            } else {
-                nickMessage.innerText = "이미 사용중인 닉네임입니다.";
-                nickMessage.classList.add("error"); // .error 스타일 적용
-                nickMessage.classList.remove("confirm"); // .confirm 스타일 제거
+                
+            }else{ // 중복인 경우
+                nickMessage.innerText = "이미 사용중인 닉네임 입니다";
+                nickMessage.classList.add("error");
+                nickMessage.classList.remove("confirm");
                 checkObj.memberNickname = false;
             }
-
         })
         .catch(err => console.log(err));
+
+        
 
 
     } else{ // 무효
@@ -309,7 +309,6 @@ memberNickname.addEventListener("input", ()=>{
     }
 
 });
-
 
 
 // 전화번호 유효성 검사
@@ -361,6 +360,7 @@ let authSec = 59;
 let tempEmail;
 
 sendAuthKeyBtn.addEventListener("click", function(){
+
     authMin = 4;
     authSec = 59;
 
@@ -389,9 +389,7 @@ sendAuthKeyBtn.addEventListener("click", function(){
         alert("인증번호가 발송 되었습니다.");
 
         
-        authKeyMessage.innerText = "05:00"; // 1초마다 줄어들면서 갱신
-        									// 인증 시: 인증완료되었습니다
-        									// 실패 시: 인증실패되었습니다..
+        authKeyMessage.innerText = "05:00";
         authKeyMessage.classList.remove("confirm");
 
         authTimer = window.setInterval(()=>{
@@ -435,8 +433,7 @@ checkAuthKeyBtn.addEventListener("click", function(){
         const obj = {"inputKey":authKey.value, "email":tempEmail}
         const query = new URLSearchParams(obj).toString()
         // inputKey=123456&email=user01
-        
-        
+
         fetch("/sendEmail/checkAuthKey?" + query)
         .then(resp => resp.text())
         .then(result => {
@@ -459,9 +456,6 @@ checkAuthKeyBtn.addEventListener("click", function(){
     }
 
 });
-
-
-
 
 
 

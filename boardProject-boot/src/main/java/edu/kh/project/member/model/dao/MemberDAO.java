@@ -8,14 +8,13 @@ import edu.kh.project.member.model.dto.Member;
 @Repository
 public class MemberDAO {
 	
-	@Autowired // 객체로 만들어진 것 -> 의존성 주입
+	@Autowired
 	private MemberMapper memberMapper; // MemberMapper 인터페이스를 상속받은 자식 객체
 										// 자식객체가 sqlSessionTemplate 이용
 	
 	
 	public Member login(Member inputMember) {
 		// return sqlSession.selectOne("memberMapper.login", inputMember);
-		// Member mem =  memberMapper.login(inputMember);
 		return memberMapper.login(inputMember);
 	}
 
@@ -23,5 +22,4 @@ public class MemberDAO {
 	public int signUp(Member inputMember) {
 		return memberMapper.signUp(inputMember);
 	}
-
 }

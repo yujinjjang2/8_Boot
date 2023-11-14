@@ -29,7 +29,7 @@ boardLike.addEventListener("click", e => {
         method : "POST",
         headers : {"Content-Type" : "application/json"},
         body : JSON.stringify(data)
-    })              // 자료형 int 1개여서 text()로 파싱
+    })
     .then(response => response.text()) // 응답 객체를 필요한 형태로 파싱하여 리턴
 
     .then(count => { 
@@ -62,28 +62,21 @@ boardLike.addEventListener("click", e => {
 
 // 게시글 수정 버튼 클릭 시
 document.getElementById("updateBtn").addEventListener("click", () => {
-	location.href
+	
+	location.href 
 		= location.pathname.replace("board", "board2")
 			+ "/update"
 			+ location.search
 			
-		// /board2/2/2006/update?cp=1 (GET)
+		// /board2/2/2006/update?cd=1 (GET)	
+	
 
 });
 
 
 // 게시글 삭제 버튼이 클릭되었을 때
-document.getElementById("deleteBtn").addEventListener("click", () => {
 
-	location.href
-		= location.pathname.replace("board", "board2")
-			+ "/delete"
-			+ location.search
-			
-		// /board2/2/2006/delete (GET)			
-
-}); 
-
+// /board2/2/2006/delete (GET)	
 
 
 

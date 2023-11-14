@@ -6,9 +6,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
-//@EnableWebSecurity     // 해당 어노테이션 작성 시, 보안 화면 뜸.
+//@EnableWebSecurity
 public class SecurityConfig {
-
+	
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();

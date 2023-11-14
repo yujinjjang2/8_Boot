@@ -21,26 +21,26 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @PropertySource("classpath:/config.properties")
 public class DBConfig {
-
-	// import org.springframework.context.ApplicationContext;
+	
+	//import org.springframework.context.ApplicationContext;
 	@Autowired
 	private ApplicationContext applicationContext; // application scope 객체
 	
-	@Bean 
+	@Bean
 	// - 개발자가 수동으로 bean을 등록하는 어노테이션
 	// - @Bean 어노테이션이 작성된 메서드에서 반환된 객체는
 	// Spring Container가 관리함
 	
-	@ConfigurationProperties(prefix = "spring.datasource.hikari") // 접두사가 spring.datasource.hikari로 시작되는 것 다 읽어와 hikariConfig 객체를 만든다는 의미
+	@ConfigurationProperties(prefix = "spring.datasource.hikari")
 	// properties 파일의 내용을 이용해서 생성되는 bean을 설정하는 어노테이션
 	// prefix를 지정하여 spring.datasource.hikari으로 시작하는 설정을 모두 적용
-	public HikariConfig hikariConfig() { // Ctrl + Space = 메소드 이름 추천해줌
+	public HikariConfig hikariConfig() {
 		return new HikariConfig();
 	}
 	
 	@Bean
 	public DataSource dataSource(HikariConfig config) {
-		 					// 매개변수에 bean이 자동으로 주입된다(DI)
+							// 매개변수에 bean이 자동으로 주입된다(DI)
 		
 		DataSource dataSource = new HikariDataSource(config);
 		return dataSource;
@@ -76,7 +76,6 @@ public class DBConfig {
 	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sessionFactory) {
 		return new SqlSessionTemplate(sessionFactory);
 	}
-	
 	//DataSourceTransactionManager : 트랜잭션 매니저
 	@Bean
 	public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource) {

@@ -1,17 +1,17 @@
 // 댓글 목록 조회
 function selectCommentList(){
-
-	// REST(REpresentational State Transfer) API 
+	
+	// REST(REpresentational State Transfer) API
 	// - 자원을 이름(주소)으로 구분하여
-	// 	 자원의 상태를 주고 받는 것
+	//   자원의 상태를 주고 받는 것
 	
 	// -> 주소를 명시하고
 	// Http Method (GET, POST, PUT, DELETE) 를 이용해
 	// 지정된 자원에 대한 CRUD 진행
 	
-	
-    fetch("/comment?boardNo=" + boardNo)
-    .then(resp => resp.json())
+
+    fetch("/comment?boardNo="+boardNo)
+    .then(response => response.json())
     .then(cList => {
         console.log(cList);
 
@@ -145,16 +145,16 @@ addComment.addEventListener("click", e => { // 댓글 등록 버튼이 클릭이
     }
 
     // 3) AJAX를 이용해서 댓글 내용 DB에 저장(INSERT)
-    const data = {"commentContent" : commentContent.value,
-    			  "memberNo" : loginMemberNo,
-    			  "boardNo" : boardNo
-    				}; // JS객체
-    
-    
+   	const data = {"commentContent" : commentContent.value,
+   					"memberNo" : loginMemberNo,
+   					"boardNo" : boardNo
+   					};
+   
+   
     fetch("/comment", {
     	method: "POST",
     	headers: {"Content-Type" : "application/json"},
-    	body : JSON.stringify(data) // JS 객체 -> JSON 파싱 
+    	body : JSON.stringify(data) // JS 객체 -> JSON 파싱
     })
     .then(resp => resp.text())
     .then(result => {
@@ -180,7 +180,7 @@ function deleteComment(commentNo){
 
     if( confirm("정말로 삭제 하시겠습니까?") ){
 
-        fetch("/comment/delete?commentNo=" + commentNo)
+        fetch("/comment/delete?commentNo="+commentNo)
         .then(resp => resp.text())
         .then(result => {
             if(result > 0){
@@ -302,16 +302,17 @@ function updateComment(commentNo, btn){
 
     // 새로 작성된 댓글 내용 얻어오기
     const commentContent = btn.parentElement.previousElementSibling.value;
+
     
     const data = {
-    			  "commentNo" : commentNo,
-    			  "commentContent" : commentContent
-    				}; // JS객체
+        "commentNo" : commentNo,
+        "commentContent" : commentContent
+    }
 
     fetch("/comment/update", {
-    	method: "POST",
-    	headers: {"Content-Type" : "application/json"},
-    	body : JSON.stringify(data) // JS 객체 -> JSON 파싱 
+        method : "POST",
+        headers : {"Content-Type" : "application/json"},
+        body : JSON.stringify(data)
     })
     .then(resp => resp.text())
     .then(result => {
@@ -409,16 +410,17 @@ function insertChildComment(parentNo, btn){
         btn.parentElement.previousElementSibling.focus();
         return;
     }
+    
+	const data = {"commentContent" : commentContent,
+				"memberNo" : loginMemberNo,
+				"boardNo" : boardNo,
+				"parentNo" : parentNo };
+   
 
-	 const data = {"commentContent" : commentContent,
-    			  "memberNo" : loginMemberNo,
-    			  "boardNo" : boardNo,
-    			  "parentNo" : parentNo}; // JS객체
-
-   fetch("/comment", {
+	fetch("/comment", {
     	method: "POST",
     	headers: {"Content-Type" : "application/json"},
-    	body : JSON.stringify(data) // JS 객체 -> JSON 파싱 
+    	body : JSON.stringify(data) // JS 객체 -> JSON 파싱
     })
     .then(resp => resp.text())
     .then(result => {

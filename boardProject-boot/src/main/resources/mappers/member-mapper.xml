@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!-- namespace를 Mapper 인터페이스로 지정 -->
-<mapper namespace="edu.kh.project.member.model.dao.MemberMapper"> <!-- MemberMapper와 mapper.xml을 연결(매핑)해주는 역할 -->
+<mapper namespace="edu.kh.project.member.model.dao.MemberMapper">
 	
 	<resultMap type="Member" id="member_rm">
 		<id property="memberNo" column="MEMBER_NO" />
@@ -15,7 +15,7 @@
 		<result property="memberDeleteFlag" column="MEMBER_DEL_FL" />
 		<result property="authority" column="AUTHORITY" />
 	</resultMap>
-
+	
 	<!-- 로그인 -->
 	<select id="login" resultMap="member_rm">
 		SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME, MEMBER_PW,

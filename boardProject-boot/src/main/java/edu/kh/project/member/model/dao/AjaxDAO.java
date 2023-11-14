@@ -12,13 +12,14 @@ public class AjaxDAO {
 	@Autowired
 	private AjaxMapper mapper;
 
-	// 닉네임으로 전화번호 조회
+	// 닉네임을 전화번호 조회
 	public String selectMemberTel(String nickname) {
 		
 		return mapper.selectMemberTel(nickname);
 	}
 
-	// 이메일로 회원정보 조회
+	
+	// 이메일로 회원정보 조회 
 	public Member selectMember(String email) {
 		
 		return mapper.selectMember(email);

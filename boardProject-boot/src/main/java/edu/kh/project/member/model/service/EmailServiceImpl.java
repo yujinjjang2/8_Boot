@@ -23,7 +23,7 @@ public class EmailServiceImpl implements EmailService{
 	@Autowired
 	private JavaMailSender mailSender;
 	
-	private String fromEmail = "o3odw98@gmail.com";
+	private String fromEmail = "cmhinst@gmail.com";
 	private String fromUsername = "수업용프로젝트";
 	
 	
@@ -55,14 +55,14 @@ public class EmailServiceImpl implements EmailService{
         return key;
     }
 
-    @Transactional
+	@Transactional
 	@Override
-	public int signUp(String email, String title /* "회원 가입" */) {
+	public int signUp(String email, String title) {
 		// 6자리 난수 인증번호 생성
 		
 		String authKey = createAuthKey();
 		
-        try {
+		 try {
 
             //인증메일 보내기
             MimeMessage mail = mailSender.createMimeMessage();
@@ -84,13 +84,13 @@ public class EmailServiceImpl implements EmailService{
             mail.setFrom(new InternetAddress(fromEmail, fromUsername));
             // 수신자(받는사람) 지정
             mail.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
-           
+            
             
             // 이메일 제목 세팅
             mail.setSubject(subject, charset);
             
             // 내용 세팅
-            mail.setText(mailContent, charset, "html" /* 중요! */); //"html" 추가 시 HTML 태그가 해석됨
+            mail.setText(mailContent, charset, "html"); //"html" 추가 시 HTML 태그가 해석됨
             
             mailSender.send(mail);
             
@@ -105,7 +105,6 @@ public class EmailServiceImpl implements EmailService{
         
         System.out.println(map);
         
-//      하나의 메소드로 dao 두개 연결
         int result = dao.updateAuthKey(map);
         
         if(result == 0) {
@@ -114,19 +113,11 @@ public class EmailServiceImpl implements EmailService{
         
 
         return result;
-        
-	}
-
-	@Override
-	public int checkAuthKey(String inputKey, String email) {
-		
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("inputKey", inputKey);
-		map.put("email", email);
-		
-		int result = dao.checkAuthKey(map);
-		
-		return result;
+	
 	}
 	
+	@Override
+	public int checkAuthKey(Map<String, Object> paramMap) {
+		return dao.checkAuthKey(paramMap);
+	}  
 }

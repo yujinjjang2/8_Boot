@@ -9,11 +9,11 @@ if(insertBtn != null) { // 로그인 여부에 따라 insertBtn이 있는가 없
 		// JS 객체중 location
 		// location.href = "주소"
 		// 해당 주소로 요청 (GET 방식)
-		// location.pathname => /board/1
 		
 		location.href = `/board2/${location.pathname.split("/")[2]}/insert`;
-						//   /board2/1/insert
+						//  /board2/1/insert
 		
 	});
+
 	
 }

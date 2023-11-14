@@ -8,7 +8,7 @@ import edu.kh.project.member.model.dto.Member;
 
 @Service // 서비스임을 명시 + bean 등록
 public class AjaxServiceImpl implements AjaxService{
-	
+
 	@Autowired
 	private AjaxDAO dao;
 
@@ -22,7 +22,7 @@ public class AjaxServiceImpl implements AjaxService{
 	// 이메일로 회원정보 조회
 	@Override
 	public Member selectMember(String email) {
-		
+	
 		return dao.selectMember(email);
 	}
 
@@ -39,5 +39,4 @@ public class AjaxServiceImpl implements AjaxService{
 		
 		return dao.checkNickname(nickname);
 	}
-
 }
