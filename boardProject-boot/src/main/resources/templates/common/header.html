@@ -43,7 +43,7 @@
  <nav>
      <ul>  <!-- 반복문 : li 포함해서 4개가 만들어짐! -->
          <li th:each="boardType : ${application.boardTypeList}">
-			 <a href="#" th:text="${boardType.BOARD_NAME}">게시판 이름</a> <!-- DB에서 가져온 컬럼명이므로 BOARD_NAME 대문자 작성! -->
+			 <a th:href="@{/board/{boardCode}(boardCode=${boardType.BOARD_CODE})}" th:text="${boardType.BOARD_NAME}">게시판 이름</a> <!-- DB에서 가져온 컬럼명이므로 BOARD_NAME 대문자 작성! -->
 		 </li>
      </ul>
  </nav>
