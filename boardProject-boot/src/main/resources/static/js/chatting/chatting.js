@@ -68,7 +68,7 @@ targetInput.addEventListener("input", e => {
 				img.classList.add("result-row-img");
 				
 				// 프로필 이미지 여부에 따른 src 속성 선택
-				if(member.profileImage == null) img.setAttribute("src", "/resources/images/user.png");
+				if(member.profileImage == null) img.setAttribute("src", "/images/user.png");
 				else	img.setAttribute("src", member.profileImage);
 
 				let nickname = member.memberNickname;
@@ -160,7 +160,7 @@ function selectRoomList(){
 			listProfile.classList.add("list-profile");
 
 			if(room.targetProfile == undefined)	
-				listProfile.setAttribute("src", "/resources/images/user.png");
+				listProfile.setAttribute("src", "/images/user.png");
 			else								
 				listProfile.setAttribute("src", room.targetProfile);
 
@@ -323,7 +323,7 @@ function selectChattingFn() {
 				li.classList.add("target-chat");
 
 				// 상대 프로필
-				// <img src="/resources/images/user.png">
+				// <img src="/images/user.png">
 				const img = document.createElement("img");
 				img.setAttribute("src", selectTargetProfile);
 				
@@ -439,7 +439,7 @@ chattingSock.onmessage = function(e) {
 			li.classList.add("target-chat");
 	
 			// 상대 프로필
-			// <img src="/resources/images/user.png">
+			// <img src="/images/user.png">
 			const img = document.createElement("img");
 			img.setAttribute("src", selectTargetProfile);
 			

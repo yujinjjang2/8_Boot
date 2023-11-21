@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.support.SessionStatus"/>
     <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
@@ -28,8 +27,6 @@
     <fullyQualifiedTypeName name="jakarta.mail.Message"/>
     <fullyQualifiedTypeName name="edu.kh.project.myPage.MyPageMapper"/>
     <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
-    <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
     <fullyQualifiedTypeName name="jakarta.servlet.MultipartConfigElement"/>
     <fullyQualifiedTypeName name="org.springframework.boot.web.servlet.MultipartConfigFactory"/>
     <fullyQualifiedTypeName name="org.springframework.util.unit.DataSize"/>
@@ -46,7 +43,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="edu.kh.project.board.model.service.BoardService"/>
-    <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
     <fullyQualifiedTypeName name="edu.kh.project.board.model.dao.BoardMapper"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
@@ -60,4 +56,8 @@
     <fullyQualifiedTypeName name="org.apache.ibatis.session.RowBounds"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
     <fullyQualifiedTypeName name="edu.kh.project.common.filter.BoardFilter"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
+    <fullyQualifiedTypeName name="edu.kh.project.board.model.dto.BoardImage"/>
 </qualifiedTypeNameHistroy>

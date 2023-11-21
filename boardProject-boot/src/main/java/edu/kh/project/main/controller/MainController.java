@@ -17,7 +17,7 @@ public class MainController {
 		// Spring MVC : /webapp/WEB-INF/views/common/main.jsp
 		
 		// Spring Boot (+ thymeleaf 템플릿 엔진)
-		// src/main/resources/templates/common/main.html
+		// src/main/templates/common/main.html
 		
 		return "common/main";
 	}

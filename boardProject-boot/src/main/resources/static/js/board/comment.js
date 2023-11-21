@@ -40,7 +40,7 @@ function selectCommentList(){
             if( comment.profileImage != null ){ // 프로필 이미지가 있을 경우
                 profileImage.setAttribute("src", comment.profileImage);
             }else{ // 없을 경우 == 기본이미지
-                profileImage.setAttribute("src", "/resources/images/user.png");
+                profileImage.setAttribute("src", "/images/user.png");
             }
 
             // 작성자 닉네임
