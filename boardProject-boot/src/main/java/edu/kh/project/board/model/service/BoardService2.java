@@ -28,8 +28,7 @@ public interface BoardService2 {
 	 * @param deleteList
 	 * @return rowCount
 	 */
-	int boardUpdate(Board board, List<MultipartFile> images,
-			String webPath, String filePath, String deleteList) throws IllegalStateException, IOException;
+	int boardUpdate(Board board, List<MultipartFile> images, String deleteList) throws IllegalStateException, IOException;
 
 	/** 게시글 삭제 서비스
 	 * @param map
