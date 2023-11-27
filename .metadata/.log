@@ -7911,3 +7911,221 @@ Caused by: java.io.FileNotFoundException: C:\Program Files\Git\mingw64\share\git
 
 !ENTRY org.eclipse.lsp4e 1 0 2023-11-24 15:17:19.057
 !MESSAGE [Info]	No ES Library found for file: file:///C:/workspace/8_Boot/boardProject-boot/src/main/resources/static/js/member/signUp.js
+!SESSION 2023-11-27 10:06:31.108 -----------------------------------------------
+eclipse.buildId=4.20.1.202310260003
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.emf.ecore 2 0 2023-11-27 10:06:31.674
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.jface 2 0 2023-11-27 10:06:37.537
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-11-27 10:06:37.537
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 10:06:39.381
+!MESSAGE [Info]	ESLint server running in node v18.17.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 10:06:39.452
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.1.6 from path "C:\tools\sts-4.20.1.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.1.1.202308101949\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 10:06:39.477
+!MESSAGE [Info]	Typescript Server version info: {version=5.1.6, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 10:06:40.084
+!MESSAGE [Info]	No ES Library found for file: file:///C:/workspace/8_Boot/boardProject-boot/src/main/resources/static/js/member/signUp.js
+
+!ENTRY org.eclipse.jface 2 0 2023-11-27 10:06:40.153
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-11-27 10:06:40.153
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-11-27 10:06:40.341
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user1'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-11-27 10:06:40.508
+!MESSAGE Boot project ADDED: boardProject-boot
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-11-27 10:06:40.508
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-11-27 10:06:40.511
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-11-27 10:06:40.523
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\tools\sts-4.20.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047\jre\bin\javaw.exe
+-cp
+C:\tools\sts-4.20.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.50.0.202310252332\servers\spring-boot-language-server\BOOT-INF\classes;C:\tools\sts-4.20.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.50.0.202310252332\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\tools\sts-4.20.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.50.0.202310252332\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/workspace/8_Boot/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1701047200522
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-11-27 10:06:40.523
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-11-27 10:06:40.528
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 16144
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 12:00:34.157
+!MESSAGE [Info]	ESLint server running in node v18.17.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 12:00:34.200
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.1.6 from path "C:\tools\sts-4.20.1.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.1.1.202308101949\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 12:00:34.200
+!MESSAGE [Info]	Typescript Server version info: {version=5.1.6, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 12:00:35.146
+!MESSAGE [Info]	No ES Library found for file: file:///C:/workspace/8_Boot/boardProject-boot/src/main/resources/static/js/board/boardList.js
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-11-27 15:25:28.197
+!MESSAGE org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: 파이프가 닫히는 중입니다
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: 파이프가 닫히는 중입니다
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:465)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: 파이프가 닫히는 중입니다
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:285)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:161)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy18/jdk.proxy18.$Proxy55.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:463)
+	... 7 more
+Caused by: java.io.IOException: 파이프가 닫히는 중입니다
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-11-27 15:25:28.197
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\tools\sts-4.20.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047\jre\bin\javaw.exe
+-cp
+C:\tools\sts-4.20.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.50.0.202310252332\servers\spring-boot-language-server\BOOT-INF\classes;C:\tools\sts-4.20.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.50.0.202310252332\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\tools\sts-4.20.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.50.0.202310252332\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/workspace/8_Boot/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1701066328196
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-11-27 15:25:28.198
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-11-27 15:25:28.199
+!MESSAGE DelegatingStreamConnectionProvider - Stopping Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-11-27 15:25:28.199
+!MESSAGE Stopped org.springframework.tooling.boot.ls LS process 16144
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-11-27 15:25:28.201
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 16964
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 15:25:29.632
+!MESSAGE [Info]	ESLint server running in node v18.17.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 15:25:29.735
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.1.6 from path "C:\tools\sts-4.20.1.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.1.1.202308101949\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 15:25:29.737
+!MESSAGE [Info]	Typescript Server version info: {version=5.1.6, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 16:13:05.152
+!MESSAGE [Info]	ESLint server running in node v18.17.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 16:13:05.190
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.1.6 from path "C:\tools\sts-4.20.1.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.1.1.202308101949\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 16:13:05.192
+!MESSAGE [Info]	Typescript Server version info: {version=5.1.6, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 16:13:06.141
+!MESSAGE [Info]	No ES Library found for file: file:///C:/workspace/8_Boot/boardProject-boot/src/main/resources/static/js/myPage/myPage.js
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 16:14:08.885
+!MESSAGE [Info]	ESLint server running in node v18.17.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 16:14:08.921
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.1.6 from path "C:\tools\sts-4.20.1.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.1.1.202308101949\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 16:14:08.923
+!MESSAGE [Info]	Typescript Server version info: {version=5.1.6, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 16:14:09.884
+!MESSAGE [Info]	No ES Library found for file: file:///C:/workspace/8_Boot/boardProject-boot/src/main/resources/static/js/member/signUp.js
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 17:09:51.264
+!MESSAGE [Info]	ESLint server running in node v18.17.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 17:09:51.365
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.1.6 from path "C:\tools\sts-4.20.1.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.1.1.202308101949\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-11-27 17:09:51.368
+!MESSAGE [Info]	Typescript Server version info: {version=5.1.6, source=user-setting}
