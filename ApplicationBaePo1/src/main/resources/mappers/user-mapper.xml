@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- namespace를 Mapper 인터페이스로 지정 -->
+<mapper namespace="com.kh.test.user.model.dao.UserMapper">
+	
+	<resultMap type="User" id="user_rm">
+		<id property="userNo" column="USER_NO" />
+		<result property="userId" column="USER_ID" />
+		<result property="userName" column="USER_NAME" />
+		<result property="userAge" column="USER_AGE" />
+	</resultMap>
+	
+	<select id="selectUserInfo" resultMap="user_rm">
+		SELECT USER_NO, USER_ID, USER_NAME, USER_AGE
+		FROM TB_USER
+		WHERE USER_ID = #{userId}
+	</select>
+
+</mapper>

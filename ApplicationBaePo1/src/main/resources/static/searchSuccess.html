@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>searchSuccess</title>
+</head>
+<body>
+	<h2>회원정보</h2>
+	
+	<table>
+		<tr>
+			<td>회원번호</td>
+			<td>회원아이디</td>
+			<td>회원이름</td>
+			<td>회원나이</td>
+		</tr>
+		
+		<tr>
+			<td th:text="${selectUser.userNo}">1</td>
+			<td th:text="${selectUser.userId}">gd_hong</td>
+			<td th:text="${selectUser.userName}">홍길동</td>
+			<td th:text="${selectUser.userAge}">20</td>
+		</tr>
+	</table>
+</body>
+</html>

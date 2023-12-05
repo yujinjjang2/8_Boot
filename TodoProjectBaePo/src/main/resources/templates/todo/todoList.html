@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>나의 To do List</h1>
+    
+    <th:block th:unless="${#lists.size(todoList) == 0}">
+		<ul th:each="todo : ${todoList}">
+			<li th:text="|${todo.todoNo} : ${todo.todoTitle}(${todo.todoContent})|">나의 To do List</li>
+		</ul>
+	</th:block>
+	
+	<th:block th:if="${#lists.size(todoList) == 0}">
+		게시글이 존재하지 않습니다.
+	</th:block>
+</body>
+</html>
