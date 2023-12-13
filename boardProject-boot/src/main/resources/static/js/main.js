@@ -13,6 +13,7 @@ if(loginFrm != null){
         if(memberEmail.value.trim().length == 0){
             alert("이메일을 입력해주세요.");
 
+
             memberEmail.value = ""; // 잘못 입력된 값(공백) 제거
             memberEmail.focus(); // 이메일 input태그에 초점을 맞춤
 
